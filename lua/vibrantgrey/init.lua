@@ -75,7 +75,7 @@ local function set_groups()
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant = { fg = c.pink2 }, -- (preferred) any constant
+    Constant = { fg = c.pink }, -- (preferred) any constant
     String = { fg = c.string }, --   a string constant: "this is a string"
     Character = { fg = c.string }, --  a character constant: 'c', '\n'
     -- Number        = { }, --   a number constant: 234, 0xff
@@ -83,10 +83,10 @@ local function set_groups()
     -- Float         = { }, --    a floating point constant: 2.3e10
 
     Identifier = { fg = c.orange2 }, -- (preferred) any variable name
-    Function = { fg = c.pink }, -- function name (also: methods for classes)
+    Function = { fg = c.yellow }, -- function name (also: methods for classes)
     Operator = { fg = c.orange }, -- "sizeof", "+", "*", etc.
 
-    Keyword = { fg = c.pink2 }, --  any other keyword
+    Keyword = { fg = c.pink }, --  any other keyword
     -- Exception     = { }, --  try, catch, throw
 
     Statement = { fg = c.statement }, -- (preferred) any statement
@@ -94,7 +94,7 @@ local function set_groups()
     -- Repeat        = { }, --   for, do, while, etc.
     -- Label         = { }, --    case, default, etc.
 
-    PreProc = { fg = c.pink2 }, -- (preferred) generic Preprocessor
+    PreProc = { fg = c.pink }, -- (preferred) generic Preprocessor
     -- Include       = { }, --  preprocessor #include
     -- Define        = { }, --   preprocessor #define
     -- Macro         = { }, --    same as Define
@@ -164,7 +164,7 @@ local function set_groups()
     healthError = { fg = c.error },
     healthSuccess = { fg = c.hint },
     healthWarning = { fg = c.warning },
-    Title = { fg = c.pink2 }
+    Title = { fg = c.pink }
   }
 
   for group, parameters in pairs(groups) do

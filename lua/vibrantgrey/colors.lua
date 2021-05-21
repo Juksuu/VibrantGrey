@@ -6,18 +6,17 @@ local colors = {
     white = "#ffffff",
 
     bg = "#3a383f",
-    fg = "#eafce3",
+    fg = "#d0d6d2",
     fg2 = "#5c6773",
 
-    green = "#91f06b",
+    green = "#53ed75",
     red = "#dd3033",
-    blue = "#3081dd",
-    yellow = "#f9f95c",
+    blue = "#537eed",
+    yellow = "#cbed53",
 
-    pink = "#ebc6f9",
-    pink2 = "#ed537e",
+    pink = "#ed537e",
     orange = "#cc9f1a",
-    orange2 = "#efc99e"
+    orange2 = "#ed7553"
   }
 
   utils.bg = colors.bg
@@ -28,14 +27,14 @@ local colors = {
   colors.hint = colors.green
   colors.string = colors.green
 
-  colors.statement = utils.adjust_brightness(colors.blue, 1.5)
+  colors.statement = utils.adjust_brightness(colors.blue, 2)
   colors.bg_highlight = utils.adjust_brightness(colors.bg, 1.5)
   colors.bg_highlight2 = utils.adjust_brightness(colors.fg2, 0.8)
 
   colors.diff = {
-    add = utils.adjust_brightness(colors.green, 0.5),
-    delete = utils.adjust_brightness(colors.red, 0.5),
-    change = utils.adjust_brightness(colors.blue, 0.5),
+    add = utils.adjust_brightness(colors.green, 0.7),
+    delete = utils.adjust_brightness(colors.red, 0.7),
+    change = utils.adjust_brightness(colors.blue, 0.7),
     text = colors.blue
   }
 
