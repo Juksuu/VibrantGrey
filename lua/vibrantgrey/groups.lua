@@ -117,6 +117,20 @@ function M.createGroups()
   Group.new('DiagnosticInformation', colors.blue)
   Group.new('DiagnosticHint', colors.green)
 
+  -- Fugitive
+  Group.new('diffAdded', colors.green:dark(0.3))
+  Group.new('diffRemoved', colors.red:dark(0.3))
+  Group.new('diffChanged', colors.blue:dark(0.3))
+  Group.new('diffOldFile', colors.red:dark(0.3))
+  Group.new('diffNewFile', colors.green:dark(0.3))
+
+  Group.new('fugitiveUnstagedHeading', colors.blue)
+  Group.new('fugitiveUnstagedModifier', colors.blue)
+  Group.new('fugitiveUntrackedHeading', colors.red)
+  Group.new('fugitiveUntrackedModifier', colors.red)
+  Group.new('fugitiveStagedHeading', colors.green)
+  Group.new('fugitiveStagedModifier', colors.green)
+
 end
 
 return M
