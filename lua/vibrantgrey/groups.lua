@@ -15,10 +15,11 @@ function M.createGroups()
   Group.new('CursorLineNr', colors.white)
   Group.new('Visual', colors.none, bg_highlight)
   Group.new('Title', colors.pink)
+  Group.new('Error', colors.red)
 
   Group.new('DiffAdd', colors.none, colors.green:dark(0.3))
   Group.new('DiffChange', colors.none, colors.blue:dark(0.3))
-  Group.new('DiffDelete', colors.none, colors.red:dark(0.3))
+  Group.new('DiffDelete', colors.none, colors.red)
   Group.new('DiffText', colors.none, colors.blue)
 
   Group.new('SignColumn', colors.fg_highlight)
@@ -30,9 +31,9 @@ function M.createGroups()
 
   Group.new('Constant', colors.pink)
   Group.new('Number', colors.pink)
+  Group.new('Boolean', colors.pink)
   -- Group.new('String')
   -- Group.new('Character')
-  -- Group.new('Boolean')
   -- Group.new('Float')
 
   Group.new('Identifier', colors.orange2)
@@ -43,9 +44,9 @@ function M.createGroups()
   -- Group.new('Exception')
 
   Group.new('Statement', groups.keyword)
-  Group.new('Conditional', colors.blue:light(0.1))
-  Group.new('Repeat', colors.blue:light(0.1))
-  Group.new('Label', colors.blue:light(0.1))
+  Group.new('Conditional', colors.blue:light(0.3))
+  Group.new('Repeat', colors.blue:light(0.3))
+  Group.new('Label', colors.blue:light(0.3))
 
   Group.new('PreProc', colors.pink)
   -- Group.new('Include')
@@ -53,10 +54,10 @@ function M.createGroups()
   -- Group.new('Macro')
   -- Group.new('PreCondit')
 
-  Group.new('Type', groups.keyword)
+  Group.new('Type', colors.blue)
   Group.new('Typedef', colors.blue)
   Group.new('Structure', colors.fg)
-  -- Group.new('StorageClass')
+  Group.new('StorageClass', groups.Identifier)
 
   Group.new('Special', colors.white)
   Group.new('SpecialChar', colors.white)
@@ -77,8 +78,8 @@ function M.createGroups()
 
   Group.new('LspDiagnosticsDefaultError', colors.red)
   Group.new('LspDiagnosticsDefaultWarning', colors.orange)
-  Group.new('LspDiagnosticsDefaultInformation', colors.green)
-  Group.new('LspDiagnosticsDefaultHint', colors.blue)
+  Group.new('LspDiagnosticsDefaultInformation', colors.blue)
+  Group.new('LspDiagnosticsDefaultHint', colors.green)
 
   Group.new('LspDiagnosticsVirtualTextError', colors.red)
   Group.new('LspDiagnosticsVirtualTextWarning', colors.orange)
@@ -87,6 +88,30 @@ function M.createGroups()
 
 
   -- Language Support
+
+  -- HTML
+  Group.new('htmlTag', groups.Keyword)
+  Group.new('htmlEndTag', groups.Keyword)
+  Group.new('htmlTagName', groups.Identifier)
+  Group.new('htmlSpecialTagName', groups.Identifier)
+  Group.new('htmlArg', colors.fg)
+  Group.new('htmlValur', colors.fg)
+  Group.new('htmlAttrEqual', groups.Operator)
+
+  -- Css / Scss
+  Group.new('cssIdentifier', groups.Identifier)
+  Group.new('cssFunction', groups.Function)
+  Group.new('cssBraces', colors.fg)
+  Group.new('sassCssAttribute', groups.Identifier)
+  Group.new('sassProperty', groups.Identifier)
+  Group.new('sassFor', groups.Repeat)
+  Group.new('sassWarn', colors.orange)
+
+  -- Svelte
+  Group.new('svelteBrace', colors.fg)
+  Group.new('svelteAttr', groups.Operator)
+  Group.new('svelteAttrEqual', groups.Operator)
+  Group.new('svelteBlockKeyword', groups.Conditional)
 
   -- Lua
   Group.new('luaFunc', groups.Function)
@@ -98,18 +123,41 @@ function M.createGroups()
   Group.new('luaFuncKeyword', groups.Keyword)
   Group.new('luaFuncId', colors.none)
   Group.new('luaFuncName', groups.Function)
+  Group.new('luaLocal', groups.Keyword)
+
+  -- Typescript
+  Group.new('typescriptImport', groups.Keyword)
+  Group.new('typescriptImportType', groups.Typedef)
+  Group.new('typescriptEnumKeyword', groups.Keyword)
+  Group.new('typescriptCastKeyword', groups.Keyword)
+  Group.new('typescriptExport', groups.Keyword)
+  Group.new('typescriptExportType', groups.Typedef)
+  Group.new('typescriptBraces', colors.fg)
+  Group.new('typescriptIdentifier', groups.Identifier)
+  Group.new('typescriptVariable', groups.Keyword)
+  Group.new('typescriptTypeReference', groups.Typedef)
+  Group.new('typescriptType', groups.Typedef)
+  Group.new('typescriptTypeCast', groups.Typedef)
+  Group.new('typescriptEnum', colors.fg)
+  Group.new('typescriptMember', groups.Identifier)
+  Group.new('typescriptAliasDeclaration', colors.fg)
+  Group.new('typescriptDestructureVariable', colors.fg)
+  Group.new('typescriptCall', colors.fg)
+  Group.new('typescriptArrowFunc', groups.Function)
+  Group.new('typescriptLabel', groups.Identifier)
+  Group.new('typescriptInterfaceName', colors.fg)
 
   -- Plugins support
 
   -- GitSigns
   Group.new('GitSignsAdd', colors.green:dark(0.3))
   Group.new('GitSignsChange', colors.blue:dark(0.3))
-  Group.new('GitSignsDelete', colors.red:dark(0.3))
+  Group.new('GitSignsDelete', colors.red)
 
   -- GitGutter
   Group.new('GitGutterAdd', colors.green:dark(0.3))
   Group.new('GitGutterChange', colors.blue:dark(0.3))
-  Group.new('GitGutterDelete', colors.red:dark(0.3))
+  Group.new('GitGutterDelete', colors.red)
 
   -- LspSaga
   Group.new('DiagnosticError', colors.red)
@@ -119,9 +167,9 @@ function M.createGroups()
 
   -- Fugitive
   Group.new('diffAdded', colors.green:dark(0.3))
-  Group.new('diffRemoved', colors.red:dark(0.3))
+  Group.new('diffRemoved', colors.red)
   Group.new('diffChanged', colors.blue:dark(0.3))
-  Group.new('diffOldFile', colors.red:dark(0.3))
+  Group.new('diffOldFile', colors.red)
   Group.new('diffNewFile', colors.green:dark(0.3))
 
   Group.new('fugitiveUnstagedHeading', colors.blue)

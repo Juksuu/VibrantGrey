@@ -1,5 +1,3 @@
--- local utils = require('vibrantgrey.utils')
-
 local Color = require("colorbuddy").setup()
 
 local M = {}
@@ -9,7 +7,7 @@ function M.createColors()
   Color.new('black', '#000000')
   Color.new('green', '#53ed75')
   Color.new('red', '#dd3033')
-  Color.new('blue', '#537eed')
+  Color.new('blue', '#128bae')
   Color.new('yellow', '#cbed53')
   Color.new('pink', '#ed537e')
   Color.new('orange', '#cc9f1a')
