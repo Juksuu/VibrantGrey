@@ -4,6 +4,8 @@ A dark greyish neovim colorscheme with some colors :)
 
 Made with [ColorBuddy](https://github.com/tjdevries/colorbuddy.nvim)
 
+![vibrantgrey_example](https://user-images.githubusercontent.com/32743062/119262676-b8112100-bbe4-11eb-850c-1d1cb3b0603b.png)
+
 ## Features
 
  + supports latest neovim 0.5 features like LSP
