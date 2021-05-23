@@ -13,6 +13,7 @@ With treesitter highlighting
 ## Features
 
  + supports latest neovim 0.5 features like LSP and Treesitter
+ + theme files for [Alacritty](https://github.com/alacritty/alacritty) and [Fish Shell](https://github.com/fish-shell/fish-shell)
 
 ### Language support
 
@@ -48,3 +49,7 @@ use 'tjdevries/colorbuddy.nvim'
 ```lua
 require('colorbuddy').colorscheme('vibrantgrey')
 ```
+
+## Extra
+
+Extra theme files can be found in extra folder
