@@ -32,8 +32,8 @@ function M.createGroups()
   Group.new('Constant', colors.pink)
   Group.new('Number', colors.pink)
   Group.new('Boolean', colors.pink)
+  Group.new('Character', colors.green)
   -- Group.new('String')
-  -- Group.new('Character')
   -- Group.new('Float')
 
   Group.new('Identifier', colors.orange2)
@@ -41,7 +41,7 @@ function M.createGroups()
   Group.new('Operator', colors.orange)
 
   Group.new('Keyword', colors.pink)
-  -- Group.new('Exception')
+  Group.new('Exception', colors.violet)
 
   Group.new('Statement', groups.keyword)
   Group.new('Conditional', colors.blue:light(0.3))
@@ -49,9 +49,9 @@ function M.createGroups()
   Group.new('Label', colors.blue:light(0.3))
 
   Group.new('PreProc', colors.pink)
+  Group.new('Define', colors.violet)
+  Group.new('Macro', colors.violet)
   -- Group.new('Include')
-  -- Group.new('Define')
-  -- Group.new('Macro')
   -- Group.new('PreCondit')
 
   Group.new('Type', colors.blue)
@@ -179,6 +179,14 @@ function M.createGroups()
   Group.new('fugitiveStagedHeading', colors.green)
   Group.new('fugitiveStagedModifier', colors.green)
 
+  -- Treesitter
+  Group.new('TSNamespace', colors.fg)
+  Group.new('TSInclude', groups.Keyword)
+  Group.new('TSLabel', groups.Define)
+  Group.new('TSConstBuiltin', groups.Keyword)
+  Group.new('TSFuncBuiltin', groups.Function)
+  Group.new('TSStringEscape', colors.fg)
+  Group.new('TSConstructor', colors.fg)
 end
 
 return M
