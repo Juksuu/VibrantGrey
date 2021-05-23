@@ -50,6 +50,13 @@ use 'tjdevries/colorbuddy.nvim'
 require('colorbuddy').colorscheme('vibrantgrey')
 ```
 
+## Configuration
+
+| Option                        |  Default  | Description                                                    |
+|-------------------------------|-----------|----------------------------------------------------------------|
+| vibrantgrey_italic_comments   |  `false`  | Make comments italic                                           |
+| vibrantgrey_transparent       |  `false`  | Enable this to get transparent background                      |
+
 ## Extra
 
 Extra theme files can be found in extra folder

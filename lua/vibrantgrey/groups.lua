@@ -1,3 +1,4 @@
+local config = require("vibrantgrey.config")
 local Color, colors, Group, groups, styles = require("colorbuddy").setup()
 
 local M = {}
@@ -7,7 +8,7 @@ function M.createGroups()
 
   -- Base groups
 
-  Group.new('Normal', colors.default_fg, colors.default_bg) -- Normal text
+  Group.new('Normal', colors.default_fg, config.transparent and colors.none or colors.default_bg) -- Normal text
   Group.new('Cursor', colors.default_bg, colors.default_fg) -- Character under cursor
   Group.new('Directory', colors.green) -- Directory names
   Group.new('VertSplit', bg_highlight, bg_highlight)
@@ -25,9 +26,9 @@ function M.createGroups()
   Group.new('SignColumn', colors.fg_highlight)
   Group.new('SignColumnSB', colors.fg_highlight)
 
-  Group.new('Pmenu', colors.fg, colors.bg:dark(0.1))
+  Group.new('Pmenu', colors.fg, colors.default_bg:dark(0.1))
 
-  Group.new('Comment', colors.fg_highlight)
+  Group.new('Comment', colors.fg_highlight, colors.none, config.italic_comments and styles.italic or styles.none)
 
   Group.new('Constant', colors.pink)
   Group.new('Number', colors.pink)
